@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- Built on Frappe. https://frappeframework.com/ -->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="frappe">
+
+	{% block meta_block %}
+	{% include "templates/includes/meta_block.html" %}
+	{% endblock %}
+
+	<title>{% block title %}{{ title | striptags }}{% endblock %}</title>
+
+	{% block favicon %}
+	<link rel="shortcut icon" href="{{ (favicon or " /assets/frappe/images/frappe-favicon.svg") | abs_url }}"
+		type="image/x-icon">
+	{% endblock %}
+
+	<link rel="canonical" href="{{ canonical }}">
+
+	{%- block head -%}
+	{% include "templates/includes/head.html" %}
+	{%- endblock -%}
+
+	{%- block head_include %}
+	{{ head_include or "" }}
+	{% endblock -%}
+
+	{%- block style %}
+	{% if colocated_css -%}
+	<style>
+		{
+				{
+				colocated_css
+			}
+		}
+	</style>
+	{%- endif %}
+	{%- endblock -%}
+
+	<script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function (fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+		window.show_language_picker = {{ show_language_picker or 'false' }};
+	</script>
+	<style>
+		.zindex {
+			z-index: 999;
+		}
+	</style>
+</head>
+
+<body data-qboat="theme-AppleGreen"
+	frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}"
+	data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif
+	%} class="{{ body_class or ''}} {{ 'qboat admin' if frappe.session.user != 'Guest' else 'qboat admin auth'}}">
+	{% include "public/icons/timeless/icons.svg" %}
+	{%- block banner -%}
+	{% include "templates/includes/banner_extension.html" ignore missing %}
+
+	<div style="{{ '' if frappe.session.user != 'Guest' else 'width:100%'}}"
+		class="{{ 'main-section page order-2 flex-grow-1  zindex' if frappe.session.user != 'Guest' else 'qboat admin auth zindex'}}">
+
+		{% if banner_html -%}
+		{{ banner_html or "" }}
+		{%- endif %}
+
+		{%- endblock -%}
+
+		{%- block navbar -%}
+
+		{{ web_block(
+		navbar_template or 'Standard Navbar',
+		values=_context_dict,
+		add_container=0,
+		add_top_padding=0,
+		add_bottom_padding=0,
+		) }}
+
+		{%- endblock -%}
+
+		{% block content %}
+		{{ content }}
+		{% endblock %}
+
+		{%- block footer -%}
+		<!-- {{ web_block(
+	footer_template or 'Standard Footer',
+	values=_context_dict,
+	add_container=0,
+	add_top_padding=0,
+	add_bottom_padding=0
+	) }} -->
+		{%- endblock -%}
+
+	</div>
+
+	<div class="body-bg">
+		<svg class="img-fluid top-0" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g clip-path="url(#clip0_121_2)">
+				<g opacity="0.14" filter="url(#filter0_f_121_2)">
+					<circle cx="1840.5" cy="600.5" r="225.5" fill="var(--accent-color)" />
+				</g>
+				<g opacity="0.08" filter="url(#filter1_f_121_2)">
+					<circle cx="222.5" cy="118.5" r="327.5" fill="var(--primary-color)" />
+				</g>
+			</g>
+			<defs>
+				<filter id="filter0_f_121_2" x="1265" y="25" width="1151" height="1151" filterUnits="userSpaceOnUse"
+					color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+					<feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_121_2" />
+				</filter>
+				<filter id="filter1_f_121_2" x="-455" y="-559" width="1355" height="1355" filterUnits="userSpaceOnUse"
+					color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+					<feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_121_2" />
+				</filter>
+				<clipPath id="clip0_121_2">
+					<rect width="1920" height="1080" fill="white" />
+				</clipPath>
+			</defs>
+		</svg>
+		<svg width="260" height="350" viewBox="0 0 260 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path opacity="0.3" fill="#9e1309" d="M129.099 290.457H162.14H162.171L145.635 311.735L129.099 290.457Z" />
+			<path opacity="0.5" fill="var(--theme-color6)"
+				d="M288.197 279.48L260.585 314.994L233.004 279.48H288.197Z" />
+			<path opacity="0.7" fill="var(--theme-color6)"
+				d="M233.004 350.478H177.812L205.393 314.994L233.004 350.478Z" />
+			<path opacity="0.4" fill="#9e1309" d="M233.004 350.478L260.585 314.994L288.197 350.478H233.004Z" />
+			<path opacity="1" fill="#000100" d="M260.585 172.998L233.004 137.484H288.197L260.585 172.998Z" />
+			<path opacity=".8" fill="#9b140b"
+				d="M197.68 305.062L205.393 314.994H150.201L177.781 279.48L197.68 305.062Z" />
+			<path opacity="1" fill="var(--theme-color5)"
+				d="M225.479 269.583L233.192 279.514H178L205.581 244L225.479 269.583Z" />
+			<path opacity="1" fill="#000100" d="M233.004 279.48L205.393 243.996H260.585L233.004 279.48Z" />
+			<path opacity="1" fill="#9b140b" d="M232.611 350.484L205 315H260.192L232.611 350.484Z" />
+			<path opacity="0.5" fill="#9e1309" d="M202.524 203.07L212.087 190.74L221.682 203.07H202.524Z" />
+			<path opacity="1" fill="#9b140b" d="M218.412 129.551L233.467 110.179L248.522 129.551H218.412Z" />
+			<path opacity="0.3" fill="var(--theme-color6)"
+				d="M233.004 208.482H288.197L260.585 243.996L233.004 208.482Z" />
+			<path opacity="1" fill="#9b140b" d="M260.616 172.998L288.197 208.482H233.004L260.616 172.998Z" />
+			<path opacity="0.6" fill="#000100"
+				d="M185.494 289.411L177.781 279.48H232.974L205.393 314.994L185.494 289.411Z" />
+			<path opacity="1" fill="#000100" d="M224.489 204.577L241.056 225.885H207.923L224.489 204.577Z" />
+		</svg>
+	</div>
+
+
+
+	{% block base_scripts %}
+	<!-- js should be loaded in body! -->
+	<script>
+		frappe.boot = {{ boot }}
+		// for backward compatibility of some libs
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script>
+	{{ include_script('frappe-web.bundle.js') }}
+	{% endblock %}
+
+	{%- for link in web_include_js %}
+	{{ include_script(link) }}
+	{%- endfor -%}
+
+	{%- block script %}
+	{% if colocated_js -%}
+	<script>{ { colocated_js } }</script>
+	{%- endif %}
+	{%- endblock %}
+	<!-- csrf_token -->
+	{%- block body_include %}{{ body_include or "" }}{% endblock -%}
+</body>
+
+</html>

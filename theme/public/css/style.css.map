@@ -1,0 +1,31 @@
+{
+    "version": 3,
+    "sources": [
+        "../global/_fonts.scss",
+        "style.css",
+        "_global.scss",
+        "../global/_themes.scss",
+        "../fonts/weather-icons/css/weather-icons.scss",
+        "../fonts/line-awesome/scss/_core.scss",
+        "../fonts/line-awesome/scss/_path.scss",
+        "../fonts/line-awesome/scss/_larger.scss",
+        "../fonts/line-awesome/scss/_fixed-width.scss",
+        "../fonts/line-awesome/scss/_list.scss",
+        "../fonts/line-awesome/scss/_bordered_pulled.scss",
+        "../fonts/line-awesome/scss/_rotated-flipped.scss",
+        "../fonts/line-awesome/scss/_stacked.scss",
+        "../fonts/line-awesome/scss/_icons.scss",
+        "../fonts/line-awesome/scss/_screen-reader.scss",
+        "../fonts/line-awesome/scss/_mixins.scss",
+        "../fonts/flag-icon/sass/_flag-icon-base.scss",
+        "../global/_general.scss",
+        "../global/_mixins.scss",
+        "../global/_helpers.scss",
+        "../global/_animation.scss",
+        "../global/_layout.scss"
+    ],
+    "names": [],
+    "mappings": "",
+    "file": "style.css",
+    "sourcesContent": []
+}

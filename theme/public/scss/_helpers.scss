@@ -1,0 +1,325 @@
+﻿.text-muted {
+    color: #9399a1 !important;
+}
+
+.fill-muted {
+    fill: #9399a1 !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-gradient {
+    background: linear-gradient(145deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-primary {
+    background: var(--primary-color) !important;
+}
+
+.bg-primary-light {
+    background: var(--primary-color) !important;
+    color: var(--gray-8);
+}
+
+.bg-secondary {
+    background: var(--secondary-color) !important;
+}
+
+.bg-accent {
+    background: var(--accent-color) !important;
+}
+
+.bg-body {
+    background: var(--body-color) !important
+}
+
+.bg-card {
+    background: var(--card-color) !important
+}
+
+.bg-primary-gradient {
+    background: var(--primary-gradient) !important;
+    color: $white;
+}
+
+.bg-gradient {
+    background: linear-gradient(145deg, var(--primary-color), var(--theme-color2)) !important;
+}
+
+.bg-light-primary {
+    background: rgba(var(--primary-rgb), .2) !important
+}
+
+.bg-light-success {
+    background: rgba($color-success, .2) !important
+}
+
+.bg-light-danger {
+    background: rgba($color-danger, .2) !important
+}
+
+.bg-light-warning {
+    background: rgba($color-warning, .2) !important
+}
+
+.bg-light-info {
+    background: rgba($color-info, .2) !important
+}
+
+.gray-0 {
+    color: var(--gray-0);
+}
+
+.gray-1 {
+    color: var(--gray-1);
+}
+
+.gray-2 {
+    color: var(--gray-2);
+}
+
+.gray-3 {
+    color: var(--gray-3);
+}
+
+.gray-4 {
+    color: var(--gray-4);
+}
+
+.gray-5 {
+    color: var(--gray-5);
+}
+
+.gray-6 {
+    color: var(--gray-6);
+}
+
+.gray-7 {
+    color: var(--gray-7);
+}
+
+.gray-8 {
+    color: var(--gray-8);
+}
+
+.gray-9 {
+    color: var(--gray-9);
+}
+
+.gray-bg-0 {
+    background-color: var(--gray-0);
+}
+
+.gray-bg-1 {
+    background-color: var(--gray-1);
+}
+
+.gray-bg-2 {
+    background-color: var(--gray-2);
+}
+
+.gray-bg-3 {
+    background-color: var(--gray-3);
+}
+
+.gray-bg-4 {
+    background-color: var(--gray-4);
+}
+
+.gray-bg-5 {
+    background-color: var(--gray-5);
+}
+
+.gray-bg-6 {
+    background-color: var(--gray-6);
+}
+
+.gray-bg-7 {
+    background-color: var(--gray-7);
+}
+
+.gray-bg-8 {
+    background-color: var(--gray-8);
+}
+
+.gray-bg-9 {
+    background-color: var(--gray-9);
+}
+
+.theme-color1 {
+    background-color: var(--theme-color1) !important
+}
+
+.theme-color2 {
+    background-color: var(--theme-color2) !important
+}
+
+.theme-color3 {
+    background-color: var(--theme-color3) !important
+}
+
+.theme-color4 {
+    background-color: var(--theme-color4) !important
+}
+
+.theme-color5 {
+    background-color: var(--theme-color5) !important
+}
+
+.theme-color6 {
+    background-color: var(--theme-color6) !important
+}
+
+.fill-primary {
+    fill: var(--primary-color) !important
+}
+
+.fill-accent {
+    fill: var(--accent-color) !important
+}
+
+.fill-secondary {
+    fill: var(--secondary-color) !important
+}
+
+.fill-white {
+    fill: #FFF !important
+}
+
+.theme-fill-color1 {
+    fill: var(--theme-color1) !important
+}
+
+.theme-fill-color2 {
+    fill: var(--theme-color2) !important
+}
+
+.theme-fill-color3 {
+    fill: var(--theme-color3) !important
+}
+
+.theme-fill-color4 {
+    fill: var(--theme-color4) !important
+}
+
+.theme-fill-color5 {
+    fill: var(--theme-color5) !important
+}
+
+.theme-fill-color6 {
+    fill: var(--theme-color6) !important
+}
+
+.theme-text-color1 {
+    color: var(--theme-color1) !important
+}
+
+.theme-text-color2 {
+    color: var(--theme-color2) !important
+}
+
+.theme-text-color3 {
+    color: var(--theme-color3) !important
+}
+
+.theme-text-color4 {
+    color: var(--theme-color4) !important
+}
+
+.theme-text-color5 {
+    color: var(--theme-color5) !important
+}
+
+.theme-text-color6 {
+    color: var(--theme-color6) !important
+}
+
+.light-yellow {
+    background-color: #fef9f4 !important
+}
+
+.color-price-up {
+    color: var(--buy-color);
+}
+
+.color-price-down {
+    color: var(--sell-color);
+}
+
+.w120 {
+    width: 120px;
+}
+
+.font-heading {
+    font-family: $font-heading;
+}
+
+.custom_scroll {
+    @include c_overflow(scroll);
+
+    @media only screen and (max-width: $break-small) {
+        padding-bottom: 60px;
+    }
+}
+
+.bg-gradient-1 {
+    background-image: radial-gradient(circle farthest-corner at 92.3% 71.5%, rgba(83, 138, 214, 1) 0%, rgba(134, 231, 214, 1) 90%);
+}
+
+.bg-gradient-2 {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);
+}
+
+.bg-gradient-3 {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(246, 98, 128, 1) 0%, rgba(248, 129, 135, 1) 98.3%);
+}
+
+.bg-gradient-4 {
+    background-image: linear-gradient(109.6deg, #d92488 11.2%, #693b9f 91.1%)
+}
+
+.bg-gradient-5 {
+    background-image: linear-gradient(358.4deg, rgba(249, 151, 119, 1) -2.1%, rgba(98, 58, 162, 1) 90%);
+}
+
+.bg-gradient-6 {
+    background-image: radial-gradient(circle farthest-corner at 7.2% 13.6%, rgba(37, 249, 245, 1) 0%, rgba(8, 70, 218, 1) 90%);
+}
+
+.bg-gradient-7 {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(85, 149, 27, 1) 0.1%, rgba(183, 219, 87, 1) 90%);
+}
+
+.bg-gradient-8 {
+    background-image: linear-gradient(109.6deg, rgba(238, 58, 136, 1) 11.2%, rgba(128, 162, 245, 1) 91.1%);
+}
+
+.bg-gradient-9 {
+    background-image: radial-gradient(circle 590px at 8.2% 13.8%, rgba(18, 35, 60, 1) 0%, #bbb 90%);
+}
+
+.bg-gradient-1,
+.bg-gradient-2,
+.bg-gradient-3,
+.bg-gradient-4,
+.bg-gradient-5,
+.bg-gradient-6,
+.bg-gradient-7,
+.bg-gradient-8,
+.bg-gradient-9 {
+    .card-body {
+        z-index: 2;
+    }
+}

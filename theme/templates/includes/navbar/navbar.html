@@ -1,0 +1,20 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+<header class="page-header sticky-top pt-3 {{ 'show' if frappe.session.user != 'Guest' else 'hide'}}">
+	<div class="container-fluid">
+		<div class="d-flex justify-content-between align-items-center"> 
+			<a class="me-4 d-lg-none d-inline-flex text-decoration-none text-accent align-items-center brand-mini"
+			href="/app"> 
+			</a>
+			<ul class="header-menu flex-grow-1">
+                <li class="w-100 d-none d-md-block header-heading">  
+                </li> 
+			</ul>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				{% include "templates/includes/navbar/navbar_items.html" %}
+			</div> 	
+		</div>
+	</div>
+	 
+</header>
+
+ 

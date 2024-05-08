@@ -1,0 +1,100 @@
+:root {
+
+    --gray-0: #F8F9FA;
+    --gray-1: #f4f5f1;
+    --gray-2: #E9ECEF;
+    --gray-3: #DEE2E6;
+    --gray-4: #CED4DA;
+    --gray-5: #ADB5BD;
+    --gray-6: #868E96;
+    --gray-7: #495057;
+    --gray-8: #343A40;
+    --gray-9: #212529;
+
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #212529;
+
+    --font-color: var(--gray-8);
+    --heading-color: var(--gray-9);
+    --border-color: var(--gray-2);
+    --body-color: var(--gray-1);
+    --card-color: var(--white);
+    --sidebar-color: var(--white);
+    --buy-color: #0ecb81;
+    --sell-color: #f6465d;
+
+    $white: #FFFFFF;
+    $black: #000000;
+    $blue: #0d6efd;
+    $indigo: #6610f2;
+    $purple: #6f42c1;
+    $pink: #d63384;
+    $red: #dc3545;
+    $orange: #fd7e14;
+    $yellow: #ffc107;
+    $green: #198754;
+    $teal: #20c997;
+    $cyan: #0dcaf0;
+}
+
+[data-theme="dark"] {
+
+    --gray-0: #212529;
+    --gray-1: #31363a;
+    --gray-2: #4e5358;
+    --gray-3: #6f7479;
+    --gray-4: #606264;
+    --gray-5: #737579;
+    --gray-6: #929599;
+    --gray-7: #a8acaf;
+    --gray-8: #e5e7e9;
+    --gray-9: #e3e6e9;
+
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #000000;
+
+    --font-color: var(--gray-6);
+    --heading-color: var(--gray-8);
+    --border-color: #19191a;
+    --body-color: #070707;
+    --card-color: #101010;
+    --sidebar-color: #1f2122;
+
+    .body-bg {
+        background: #0f0f10;
+    }
+
+    [data-qboat="theme-DaisyBush"] {
+        --primary-color: #7529c2;
+    }
+
+    [data-qboat="theme-Midnight"] {
+        --primary-color: #3f5770;
+    }
+}
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');  
+
+@import "_themes.scss";
+@import "_variables.scss";
+@import "_mixins.scss"; 
+@import "_general.scss";
+@import "_helpers.scss";
+@import "_animation.scss";
+@import "_layout.scss";
+@import "new-style.scss";

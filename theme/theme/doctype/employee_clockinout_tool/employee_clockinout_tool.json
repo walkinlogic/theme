@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_rename": 1,
+ "creation": "2024-05-03 11:00:50.129825",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "detail_section",
+  "employee_checkin",
+  "create_checkin"
+ ],
+ "fields": [
+  {
+   "fieldname": "detail_section",
+   "fieldtype": "Section Break",
+   "label": "Detail"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "employee_checkin",
+   "fieldtype": "Table",
+   "label": "Employee Checkin",
+   "options": "Employee Checks Tool Table"
+  },
+  {
+   "fieldname": "create_checkin",
+   "fieldtype": "Button",
+   "label": "Create Checkin"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-05-03 11:16:17.241280",
+ "modified_by": "Administrator",
+ "module": "Theme",
+ "name": "Employee ClockInOut Tool",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html data-theme-mode="{{ desk_theme.lower() }}" data-theme="{{ desk_theme.lower() }}" dir={{ layout_direction }} lang="{{ lang }}"  dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
+	<head>
+		<meta charset="UTF-8">
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#0089FF">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#0089FF">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#0089FF">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,
+			maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="white">
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>{{ app_name }}</title>
+		<link rel="stylesheet/less" href="/assets/theme/css/new-style.scss" type="MIME">
+		<link rel="shortcut icon"
+			href="{{ favicon or "/assets/frappe/images/frappe-favicon.svg" }}" type="image/x-icon">
+		<link rel="icon"
+			href="{{ favicon or "/assets/frappe/images/frappe-favicon.svg" }}" type="image/x-icon">
+		{% for include in include_css -%}
+		{{ include_style(include) }}
+		{%- endfor -%}
+	</head>
+	<body class="" data-qboat="theme-AppleGreen" data-sidebartype="full" >
+		{% include "templates/includes/splash_screen.html" %}
+		
+	<div class="preloader">
+		<img src="/assets/theme/assets/images/logos/loader.svg" alt="loader" class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<aside class="left-sidebar with-vertical">
+			<div class="brand-logo d-flex gap-3 align-items-center">
+				<a href="/app" class="text-nowrap logo-img">
+				  <img src="" class="dark-logo" alt="Logo-Dark" /> 
+				</a> 
+					<a href='/app' class="m-0 toggler text-decoration-none" id="companynamebrand"><b>Xpert HRM</b> </a>  
+				<a href="javascript:void(0)" onclick="sidebartoggler()" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+				  <i class="ti ti-x"></i>
+				</a>
+			</div>
+			<div class="scroll-sidebar" data-simplebar>
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav sidebarnav">
+					<div class="sidebar">
+						<div class="container-fluid">
+							<!--[ sidebar:: menu list ]-->
+							<div class="flex-grow-1"> 
+								<!--  mt-3 rounded-4 -->
+								<ul class="menu-list  layout-side-section-menu" id="accordionmainmenu">
+								 
+				
+								</ul>
+				
+							</div> 
+						</div>
+					</div>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<div class=" fixed-profile m-4 mt-0">
+				<div class="card bg-primary-subtle mb-0 shadow-none">
+				  <div class="card-body">
+					<div class="d-flex align-items-center justify-content-between gap-2">
+					  <div class="d-flex align-items-center gap-2" >
+						<span id="userimageavatar"></span> 
+						<div>
+						  <h5 class="mb-1" id="userfullnamesession">-</h5>
+						  <p class="mb-0" id="usertypesession">-</p>
+						</div>
+					  </div>
+					  <a href="/login#login" onclick="return frappe.app.logout()" class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Logout">
+						<iconify-icon icon="solar:logout-line-duotone" class="fs-8"></iconify-icon>
+					  </a>
+					 
+					</div>
+				  </div>
+				</div>
+			</div>
+		</aside>
+		<div class="page-wrapper">
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<header class="page-header sticky-top pt-3 topbar sticky-top"></header>
+					<div class="main-section page order-2 flex-grow-1">
+		
+						<div id="body"></div>
+				
+						<footer></footer>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="body-bg">
+		<svg class="img-fluid top-0" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g clip-path="url(#clip0_121_2)">
+				<g opacity="0.14" filter="url(#filter0_f_121_2)">
+					<circle cx="1840.5" cy="600.5" r="225.5" fill="var(--accent-color)" />
+				</g>
+				<g opacity="0.1" filter="url(#filter1_f_121_2)">
+					<circle cx="222.5" cy="118.5" r="327.5" fill="var(--primary-color)" />
+				</g>
+			</g>
+			<defs>
+				<filter id="filter0_f_121_2" x="1265" y="25" width="1151" height="1151" filterUnits="userSpaceOnUse"
+					color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+					<feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_121_2" />
+				</filter>
+				<filter id="filter1_f_121_2" x="-455" y="-559" width="1355" height="1355" filterUnits="userSpaceOnUse"
+					color-interpolation-filters="sRGB">
+					<feFlood flood-opacity="0" result="BackgroundImageFix" />
+					<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+					<feGaussianBlur stdDeviation="175" result="effect1_foregroundBlur_121_2" />
+				</filter>
+				<clipPath id="clip0_121_2">
+					<rect width="1920" height="1080" fill="white" />
+				</clipPath>
+			</defs>
+		</svg>
+		<svg width="260" height="350" viewBox="0 0 260 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path opacity="0.3" fill="#9e1309" d="M129.099 290.457H162.14H162.171L145.635 311.735L129.099 290.457Z" />
+			<path opacity="0.5" fill="var(--theme-color6)"
+				d="M288.197 279.48L260.585 314.994L233.004 279.48H288.197Z" />
+			<path opacity="0.7" fill="var(--theme-color6)"
+				d="M233.004 350.478H177.812L205.393 314.994L233.004 350.478Z" />
+			<path opacity="0.4" fill="#9e1309" d="M233.004 350.478L260.585 314.994L288.197 350.478H233.004Z" />
+			<path opacity="1" fill="#000100" d="M260.585 172.998L233.004 137.484H288.197L260.585 172.998Z" />
+			<path opacity=".8" fill="#9b140b"
+				d="M197.68 305.062L205.393 314.994H150.201L177.781 279.48L197.68 305.062Z" />
+			<path opacity="1" fill="var(--theme-color5)"
+				d="M225.479 269.583L233.192 279.514H178L205.581 244L225.479 269.583Z" />
+			<path opacity="1" fill="#000100" d="M233.004 279.48L205.393 243.996H260.585L233.004 279.48Z" />
+			<path opacity="1" fill="#9b140b" d="M232.611 350.484L205 315H260.192L232.611 350.484Z" />
+			<path opacity="0.5" fill="#9e1309" d="M202.524 203.07L212.087 190.74L221.682 203.07H202.524Z" />
+			<path opacity="1" fill="#9b140b" d="M218.412 129.551L233.467 110.179L248.522 129.551H218.412Z" />
+			<path opacity="0.3" fill="var(--theme-color6)"
+				d="M233.004 208.482H288.197L260.585 243.996L233.004 208.482Z" />
+			<path opacity="1" fill="#9b140b" d="M260.616 172.998L288.197 208.482H233.004L260.616 172.998Z" />
+			<path opacity="0.6" fill="#000100"
+				d="M185.494 289.411L177.781 279.48H232.974L205.393 314.994L185.494 289.411Z" />
+			<path opacity="1" fill="#000100" d="M224.489 204.577L241.056 225.885H207.923L224.489 204.577Z" />
+		</svg>
+	</div>
+
+	
+		<div id="all-symbols" style="display:none"></div>
+		<div id="build-events-overlay"></div>
+
+		<script type="text/javascript">
+			window._version_number = "{{ build_version }}";
+			// browser support
+			window.app = true;
+			window.dev_server = {{ dev_server }};
+
+			if (!window.frappe) window.frappe = {};
+
+			frappe.boot = JSON.parse({{ boot }});
+			frappe._messages = frappe.boot["__messages"];
+			frappe.csrf_token = "{{ csrf_token }}";
+
+
+			{%- for path in include_icons -%}
+			fetch(`/assets/{{ path }}?v=${window._version_number}`, { credentials: "same-origin" })
+				.then((r) => r.text())
+				.then((svg) => {
+					let svg_container = document.getElementById("all-symbols");
+					svg_container.insertAdjacentHTML("beforeend", svg);
+				});
+			{%- endfor -%}
+		</script>
+
+	{% for include in include_js %}
+	{{ include_script(include) }}
+	{% endfor %}
+
+	{% include "templates/includes/app_analytics/google_analytics.html" %}
+
+		{% for sound in (sounds or []) %}
+		<audio preload="auto" id="sound-{{ sound.name }}" volume={{ sound.volume or 1 }}>
+			<source src="{{ sound.src }}"></source>
+		</audio>
+		{% endfor %}
+	</body>
+</html>

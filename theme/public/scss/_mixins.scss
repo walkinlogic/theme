@@ -1,0 +1,70 @@
+@mixin transition($transition) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin fadeInAnimation($fadeInAnimation) {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin overflow($scroll) {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE 10+
+
+    &::-webkit-scrollbar {
+        // WebKit 
+        width: 3px;
+        // background-color: var(--primary-color)
+    }
+
+    &::-webkit-scrollbar-thumb {
+        // background: var(--primary-color)
+    }
+}
+
+@mixin c_overflow($scroll) {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; // IE 10+
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+        background: var(--card-color);
+        visibility: visible;
+        width: 4px;
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background: var(--gray-4);
+        }
+    }
+
+    // Track /
+    &::-webkit-scrollbar-track {
+        visibility: visible;
+        background: transparent;
+    }
+
+    // Handle /
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        visibility: visible;
+    }
+}
