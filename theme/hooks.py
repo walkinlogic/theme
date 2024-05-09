@@ -297,4 +297,4 @@ web_include_js = [ "website_script.js",
     # bootinfo.my_global_key = "my_global_value"
  
 # python module path
-extend_bootinfo = "theme.boot_session.boot_session"    
+#extend_bootinfo = "theme.boot_session.boot_session"    
