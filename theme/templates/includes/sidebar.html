@@ -1,0 +1,123 @@
+<aside class="left-sidebar with-vertical">
+    <div class="brand-logo d-flex gap-3 align-items-center justify-content-between">
+        <a href="/app" class="text-nowrap logo-img">
+          <img src="/assets/theme/img/sindh-gov-logo.png" class="dark-logo" alt="Logo-Dark" /> 
+        </a> 
+            <a href='/app/configuration-screens' class="m-0 toggler text-decoration-none">Directorate General of <b>Monitoring and Evaluation</b></a>  
+        <a href="javascript:void(0)" onclick="sidebartoggler()" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+          <i class="ti ti-x"></i>
+        </a>
+    </div>
+    <div class="scroll-sidebar" data-simplebar>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav sidebarnav">
+            <div class="sidebar">
+                <div class="container-fluid">
+                    <!--[ sidebar:: menu list ]-->
+                    <div class="flex-grow-1"> 
+                        <!--  mt-3 rounded-4 -->
+                        <ul class="menu-list  layout-side-section-menu" id="accordionmainmenu"> 
+                            {% for page in pages %} 
+                            {% if page.is_hidden == 0 %}
+                            {% set jsoncontent = json.loads(page.content) %}
+                            <li class="collapsed sidebar-item">
+                                <a class="m-link sidebar-link has-arrow success-hover-bg {{page.title}}" data-bs-parent="#accordionmainmenu" data-bs-toggle="collapse" data-bs-target="#item{{jsoncontent[0]['id']}}" href="#" aria-expanded="false">
+                                    <svg class="icon  icon-md" >
+                                        <use class="" href="#icon-{{ page.icon }}"></use>
+                                    </svg>    
+                                    <span class="mx-2 ps-1">{{page.title}}</span>
+                                    <span class="arrow fa fa-angle-down ms-auto text-end d-none hide"></span>
+                                    
+                                </a> 
+                                
+                                 <ul class="sub-menu collapse " id="item{{jsoncontent[0]['id']}}" >
+                                    {% for card in page.cards["items"] %}
+                                    <li>
+                                        <a class="ms-link desk-sidebar-item standard-sidebar-item side-menu__link" href=javascript:;>
+                                          <div class=side-menu__link__title>{{ _(card.label) }}</div>
+                                          <i class="stroke-[1] h-5 w-5 cursor-pointer side-menu__link__chevron" data-tw-merge="" data-lucide=chevron-down></i>
+                                        </a>
+                                        <ul  style="display:none">{% for link in card.links %} <li>
+                                            <a class="side-menu__link link_to_page" href=javascript:; data-title="{{ link.link_to }}" data-is_link=1>
+                                              <div class="side-menu__link__title">{{ _(link.label) }}</div>
+                                            </a>
+                                          </li>{% endfor %} 
+                                        
+                                        </ul>
+                                      </li> 
+                                    {% endfor %} 
+                                    {% for card in page.shortcuts["items"] %}
+                                    <li>
+                                        {% if card.type == 'URL' %}
+                                        <a class="ms-link desk-sidebar-item standard-sidebar-item side-menu__link" href="/app{{card.url}}">
+                                          <div class=side-menu__link__title>{{ _(card.label) }}</div>
+                                          <i class="stroke-[1] h-5 w-5 cursor-pointer side-menu__link__chevron" data-tw-merge="" data-lucide=chevron-down></i>
+                                        </a> 
+                                        {% elif card.type == 'Page' %}
+                                        <a class="ms-link desk-sidebar-item standard-sidebar-item side-menu__link" href="/app/{{card.link_to}}">
+                                          <div class=side-menu__link__title>{{ _(card.label) }}</div>
+                                          <i class="stroke-[1] h-5 w-5 cursor-pointer side-menu__link__chevron" data-tw-merge="" data-lucide=chevron-down></i>
+                                        </a> 
+                                        {% else %} 
+                                        
+                                        {% set doctype_slug = card.link_to.lower().replace(' ','-') %}
+                                        {% if card.doc_view == 'List' %}
+                                            {% set url = doctype_slug + '/view/list' %}
+                                        {% elif card.doc_view == 'Tree' %}
+                                            {% set url = doctype_slug + '/view/tree' %}
+                                        {% elif card.doc_view == 'Report Builder' %}
+                                            {% set url = doctype_slug + '/view/report' %}
+                                        {% elif card.doc_view == 'Dashboard' %}
+                                            {% set url = doctype_slug + '/view/dashboard' %}
+                                        {% elif card.doc_view == 'New' %}
+                                            {% set url = doctype_slug + '/new' %}
+                                        {% elif card.doc_view == 'Calendar' %}
+                                            {% set url = doctype_slug + '/view/calendar/default' %}
+                                        {% elif card.doc_view == 'Kanban' %}
+                                            {% set url = doctype_slug + '/view/kanban' %}
+                                        {% else %} 
+                                            {% set url = doctype_slug %}
+                                        {% endif %}
+                                         
+
+                                        <a class="ms-link desk-sidebar-item standard-sidebar-item side-menu__link" href="/app/{{url}}">
+                                            <div class=side-menu__link__title>{{ _(card.label) }}</div>
+                                            <i class="stroke-[1] h-5 w-5 cursor-pointer side-menu__link__chevron" data-tw-merge="" data-lucide=chevron-down></i>
+                                          </a>
+                                        {% endif %}
+                                      </li> 
+                                    {% endfor %}
+                                </ul> 
+                            </li>
+                            
+                             
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+        
+                    </div> 
+                </div>
+            </div>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <div class=" fixed-profile m-3 mb-4 mt-0">
+        <div class="card bg-primary-subtle mb-0 shadow-none">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between gap-2">
+              <div class="d-flex align-items-center gap-2" >
+                <span id="userimageavatar"></span> 
+                <div>
+                  <h5 class="mb-1" id="userfullnamesession">{{fullname}}</h5>
+                  <p class="mb-0" id="usertypesession">{{user}}</p>
+                </div>
+              </div>
+              <a href="/?cmd=web_logout"  class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Logout">
+                <iconify-icon icon="solar:logout-line-duotone" class="fs-8"></iconify-icon>
+              </a>
+             
+            </div>
+          </div>
+        </div>
+    </div>
+</aside>
